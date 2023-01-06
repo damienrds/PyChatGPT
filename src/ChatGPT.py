@@ -6,7 +6,7 @@ def chatGPT(iPrompt):
     completion = openai.Completion.create(
         engine=model_engine,
         prompt=iPrompt,
-        max_tokens=1024,
+        max_tokens=2048,
         n=1,
         stop=None,
         temperature=0.5,
@@ -26,7 +26,7 @@ while True:
     if vPrompt in ["stop", "s", "exit", "e", "quit", "q", ""] :
         break
     vResponse = chatGPT(vPrompt)
-    print(vResponse)
+    print("ChatGPT <<< " + vResponse.replace("\n", "") + "\n")
     
 
 
