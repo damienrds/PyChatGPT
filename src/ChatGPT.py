@@ -25,6 +25,9 @@ while True:
     vPrompt = input("ChatGPT >>> ")
     if vPrompt in ["stop", "s", "exit", "e", "quit", "q", ""] :
         break
+    if vPrompt in ["clear", "c", "cls"]:
+        os.system("cls")
+        continue
     vResponse = chatGPT(vPrompt)
     print("ChatGPT <<< " + vResponse.replace("\n", "") + "\n")
     
