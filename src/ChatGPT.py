@@ -28,8 +28,12 @@ while True:
     if vPrompt in ["clear", "c", "cls"]:
         os.system("cls")
         continue
-    vResponse = chatGPT(vPrompt)
-    print("ChatGPT <<< " + vResponse.replace("\n", "") + "\n")
     
-
-
+    print("Wait for it...", end="\r")
+    
+    try:
+        vResponse = chatGPT(vPrompt).replace("\n", "")
+    except Exception as e:
+        vResponse = "An error occured: " + str(e)
+        
+    print("ChatGPT <<< " + vResponse + "\n")
